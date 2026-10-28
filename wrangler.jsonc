@@ -1,0 +1,6 @@
+{
+  // El "name" debe coincidir con el nombre del proyecto en Cloudflare
+  "name": "plantilla-hamburgueseria",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./dist" }
+}

@@ -1,0 +1,216 @@
+{
+  "name": "Doble Cuarto",
+  "url": "https://facundocascallares.dev",
+  "title": "Doble Cuarto | Hamburguesas artesanales en Mar del Plata",
+  "description": "Hamburguesas artesanales con pan casero en Mar del Plata. Mirá la carta, armá tu pedido y envialo por WhatsApp.",
+  "whatsapp": "5492236035305",
+  "street": "Av. Colón 12345",
+  "city": "Mar del Plata",
+  "region": "Buenos Aires",
+  "instagram": "facundonahuelcascallares",
+  "openingHours": [
+    "Tu-Su 19:00-00:30"
+  ],
+  "menu": [
+    {
+      "id": "promos",
+      "category": "Promos",
+      "emoji": "🔥",
+      "items": [
+        {
+          "id": "c1",
+          "name": "Combo Clásica",
+          "description": "Clásica, papas clásicas y gaseosa 500 ml",
+          "price": 11900,
+          "tag": "Combo"
+        },
+        {
+          "id": "c2",
+          "name": "Combo Doble",
+          "description": "Doble Cuarto, papas cheddar y panceta, y cerveza",
+          "price": 16900,
+          "tag": "Combo"
+        }
+      ]
+    },
+    {
+      "id": "burgers",
+      "category": "Burgers",
+      "emoji": "🍔",
+      "items": [
+        {
+          "id": "b1",
+          "name": "Doble Cuarto",
+          "description": "Doble carne smash, doble cheddar, pickles y cebolla caramelizada",
+          "price": 9800,
+          "tag": "La de la casa"
+        },
+        {
+          "id": "b2",
+          "name": "Clásica",
+          "description": "Carne, cheddar, lechuga, tomate y salsa de la casa",
+          "price": 7500
+        },
+        {
+          "id": "b3",
+          "name": "Bacon BBQ",
+          "description": "Carne, panceta crocante, aros de cebolla y BBQ ahumada",
+          "price": 9500
+        },
+        {
+          "id": "b4",
+          "name": "Fuego",
+          "description": "Doble carne, pepper jack, jalapeños y mayo picante",
+          "price": 9900,
+          "tag": "Picante"
+        },
+        {
+          "id": "b5",
+          "name": "Crispy",
+          "description": "Pollo crispy, alioli, lechuga y tomate",
+          "price": 8900
+        },
+        {
+          "id": "b6",
+          "name": "Triple",
+          "description": "Triple carne, triple cheddar y panceta",
+          "price": 11800
+        }
+      ]
+    },
+    {
+      "id": "veggie",
+      "category": "Veggie",
+      "emoji": "🌱",
+      "items": [
+        {
+          "id": "v1",
+          "name": "Garbanzo",
+          "description": "Medallón de garbanzos y remolacha, rúcula y alioli",
+          "price": 8200
+        },
+        {
+          "id": "v2",
+          "name": "Portobello",
+          "description": "Hongos grillados, queso brie, rúcula y mostaza antigua",
+          "price": 8600
+        }
+      ]
+    },
+    {
+      "id": "limited",
+      "category": "Edición limitada",
+      "emoji": "⭐",
+      "items": [
+        {
+          "id": "l1",
+          "name": "Patty melt",
+          "description": "Carne, cebolla caramelizada y queso suizo sobre pan de molde tostado",
+          "price": 9700,
+          "tag": "Solo este mes"
+        }
+      ]
+    },
+    {
+      "id": "extras",
+      "category": "Extras",
+      "emoji": "🍟",
+      "items": [
+        {
+          "id": "p1",
+          "name": "Papas clásicas",
+          "description": "Porción para uno",
+          "price": 3500
+        },
+        {
+          "id": "p2",
+          "name": "Papas cheddar y panceta",
+          "description": "Para compartir",
+          "price": 5800
+        },
+        {
+          "id": "p3",
+          "name": "Aros de cebolla",
+          "description": "Rebozados, con salsa ranch",
+          "price": 4300
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "category": "Bebidas",
+      "emoji": "🥤",
+      "items": [
+        {
+          "id": "d1",
+          "name": "Gaseosa 500 ml",
+          "description": "Línea Coca-Cola",
+          "price": 2500
+        },
+        {
+          "id": "d2",
+          "name": "Cerveza artesanal",
+          "description": "Pinta de la casa",
+          "price": 4200
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "Local Centro",
+      "address": "Av. Colón 12345",
+      "map": "https://maps.google.com",
+      "hours": [
+        "Martes a domingo: 19 a 00:30",
+        "Lunes: cerrado"
+      ]
+    },
+    {
+      "name": "Local Playa Grande",
+      "address": "Av. Martínez de Hoz 0000",
+      "map": "https://maps.google.com",
+      "hours": [
+        "Viernes a domingo: 12 a 00",
+        "Lunes a jueves: cerrado"
+      ]
+    }
+  ],
+  "ticker": [
+    "Carne smash",
+    "Pan casero",
+    "Salsas propias",
+    "Pedí por WhatsApp"
+  ],
+  "announcement": "Pedidos online de 19:30 a 00:15. Delivery propio en la zona.",
+  "manifesto": {
+    "title": "Hecha al momento. Pedida en dos toques.",
+    "text": "Elegís, sumás al pedido y nos llega por WhatsApp con todo armado. Nada de apps ni registros: la plancha ya está prendida."
+  },
+  "perks": [
+    {
+      "emoji": "🥩",
+      "title": "Carne picada a diario",
+      "text": "Medallones smash de carne fresca, nunca congelada."
+    },
+    {
+      "emoji": "🍞",
+      "title": "Pan casero",
+      "text": "Horneado todos los días, blando y tostado en la plancha."
+    },
+    {
+      "emoji": "🌶️",
+      "title": "Salsas propias",
+      "text": "Hechas en el local, con recetas que no se cuentan."
+    }
+  ],
+  "delivery": {
+    "title": "Las hacemos y las llevamos a tu puerta.",
+    "text": "Tenemos delivery propio para que llegue caliente y a tiempo.",
+    "chips": [
+      "Zona centro y alrededores",
+      "30 a 45 minutos",
+      "Costo de envío por WhatsApp"
+    ]
+  }
+}

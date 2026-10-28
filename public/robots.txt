@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://CAMBIAR-DOMINIO.com.ar/sitemap-index.xml

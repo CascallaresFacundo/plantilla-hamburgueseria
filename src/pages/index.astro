@@ -1,0 +1,154 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const fmt = (n: number) => '$' + n.toLocaleString('es-AR');
+const ticker = [...site.ticker, ...site.ticker, ...site.ticker, ...site.ticker];
+---
+<Base>
+  <div class="ann">{site.announcement}</div>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#">{site.name}</a>
+      <div class="hb">
+        <a class="r" href="#carta" data-mode="Delivery">Delivery</a>
+        <a href="#carta" data-mode="Retiro">Takeaway</a>
+        <button class="hc" id="hcart" aria-label="Ver pedido">Pedido <span id="hct">$0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Burgers</h1>
+        <p>Carne smash, pan casero y salsas hechas en el local. Armá tu pedido y llega armado a nuestro WhatsApp.</p>
+        <a class="btn" href="#carta">Ver la carta</a>
+      </div>
+      <div class="ph" data-emoji="🍔"><img src="/burgers/hero.jpg" alt="Hamburguesa de la casa" width="768" height="960" /></div>
+    </div>
+  </div>
+
+  <div class="marq" aria-hidden="true">
+    <div>{[...ticker, ...ticker].map((t) => <span>{t} /</span>)}</div>
+  </div>
+
+  <section class="wrap tiles-s" aria-label="Elegí por tipo">
+    <div class="tiles">
+      {site.menu.map((g) => (
+        <a class="tile" href={`#${g.id}`}>
+          <span class="e">{g.emoji}</span>
+          <span><b>{g.category}</b><small>{g.items.length} {g.items.length === 1 ? 'opción' : 'opciones'}</small></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="man">
+    <div class="wrap">
+      <h2>{site.manifesto.title}</h2>
+      <p>{site.manifesto.text}</p>
+    </div>
+  </section>
+
+  <nav class="cats" aria-label="Categorías de la carta">
+    <div class="wrap">
+      {site.menu.map((g, i) => <a href={`#${g.id}`} class={i === 0 ? 'on' : ''}>{g.category}</a>)}
+    </div>
+  </nav>
+
+  <main id="carta">
+    <div class="wrap">
+      {site.menu.map((g) => (
+        <section class="group" id={g.id}>
+          <h2>{g.category}</h2>
+          <div class="grid">
+            {g.items.map((it) => (
+              <article class="card item" data-id={it.id} data-name={it.name} data-price={it.price}>
+                <div class="ph" data-emoji={g.emoji}>
+                  <img src={`/burgers/${it.id}.jpg`} alt={it.name} loading="lazy" width="768" height="960" />
+                  {'tag' in it && it.tag && <span class="tag">{it.tag}</span>}
+                </div>
+                <div class="cb">
+                  <h3>{it.name}</h3>
+                  <p>{it.description}</p>
+                  <div class="cf">
+                    <span class="price">{fmt(it.price)}</span>
+                    <div class="ctl"><button class="add" data-a={it.id} aria-label={`Agregar ${it.name}`}>+</button></div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+
+    </div>
+  </main>
+
+  <section class="deliv">
+    <div class="wrap">
+      <h2>{site.delivery.title}</h2>
+      <p>{site.delivery.text}</p>
+      <ul>{site.delivery.chips.map((c) => <li>{c}</li>)}</ul>
+      <p><a class="btn" href="#carta" data-mode="Delivery">Pedir delivery</a></p>
+    </div>
+  </section>
+
+  <div class="wrap">
+      <section>
+        <h2>Por qué se nota</h2>
+        <div class="perks">
+          {site.perks.map((k) => (
+            <div class="perk"><span class="e">{k.emoji}</span><h3>{k.title}</h3><p>{k.text}</p></div>
+          ))}
+        </div>
+      </section>
+
+      <section id="locales">
+        <h2>Dónde estamos</h2>
+        <div class="locs">
+          {site.locales.map((l) => (
+            <div class="loc">
+              <h3>{l.name}</h3>
+              <p><a href={l.map}>{l.address}, {site.city}</a></p>
+              {l.hours.map((h) => <p>{h}</p>)}
+            </div>
+          ))}
+        </div>
+      </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p class="big disp">{site.name}</p>
+      <a href={`https://wa.me/${site.whatsapp}`}>WhatsApp</a>
+      <a href={`https://instagram.com/${site.instagram}`}>@{site.instagram}</a>
+      <a href={`https://facundocascallares.dev`}>Desarrollado por Facundo Cascallares</a>
+    </div>
+  </footer>
+
+  <div id="bar"><button class="btn" id="open"><span id="cnt">0 productos</span><span id="tot">$0</span></button></div>
+
+  <div id="sheet" role="dialog" aria-modal="true" aria-label="Tu pedido">
+    <div class="panel">
+      <button class="close" id="close" aria-label="Cerrar">×</button>
+      <h2>Tu pedido</h2>
+      <div id="lines"></div>
+      <div class="total"><span>Total</span><span id="tot2">$0</span></div>
+      <label for="name">Tu nombre</label><input type="text" id="name" autocomplete="given-name" />
+      <label>Cómo lo querés</label>
+      <div class="radios">
+        <label style="margin:0"><input type="radio" name="m" value="Retiro" checked /> Takeaway</label>
+        <label style="margin:0"><input type="radio" name="m" value="Delivery" /> Delivery</label>
+      </div>
+      <div id="addrBox" style="display:none"><label for="addr">Dirección</label><input type="text" id="addr" autocomplete="street-address" /></div>
+      <label for="note">Aclaraciones</label><textarea id="note" rows="2" placeholder="Sin cebolla, extra cheddar…"></textarea>
+      <p style="margin:16px 0 8px"><button class="btn" id="send">Enviar pedido por WhatsApp</button></p>
+    </div>
+  </div>
+
+  <script>
+    import '../scripts/cart.ts';
+  </script>
+</Base>
